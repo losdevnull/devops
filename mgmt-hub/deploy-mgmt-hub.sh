@@ -85,7 +85,7 @@ if [[ -z "$HZN_DEVICE_TOKEN" ]]; then
     HZN_DEVICE_TOKEN_GENERATED=1
 fi
 
-export HZN_LISTEN_IP=${HZN_LISTEN_IP:-127.0.0.1}   # the host IP address the hub services should listen on. Can be set to 0.0.0.0 to mean all interfaces, including the public IP, altho this is not recommended, since the services use http.
+export HZN_LISTEN_IP=${HZN_LISTEN_IP:-0.0.0.0}   # the host IP address the hub services should listen on. Can be set to 0.0.0.0 to mean all interfaces, including the public IP, altho this is not recommended, since the services use http.
 export HZN_TRANSPORT=${HZN_TRANSPORT:-http}
 
 export EXCHANGE_IMAGE_TAG=${EXCHANGE_IMAGE_TAG:-latest}   # or can be set to stable or a specific version
@@ -210,7 +210,7 @@ isMacOS() {
 }
 
 isUbuntu18() {
-    if [[ "$DISTRO" == 'Ubuntu 18.'* ]]; then
+    if [[ "$DISTRO" == 'Ubuntu 20.'* ]]; then
 		return 0
 	else
 		return 1
